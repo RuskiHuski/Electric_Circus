@@ -1,33 +1,8 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-image_speed = 0
-
-//key binds
 var rkey = keyboard_check(vk_right)
 var lkey = keyboard_check(vk_left)
-var jkey = keyboard_check(vk_up)
 
-// checking if on ground
 if (place_meeting(x, y+1, obj_solid)) {
 	vspd = 0;
-	if (jkey) {
-		if (jpow<20){
-			jpow +=1;
-		}
-		if (image_yscale >.7) {
-			image_yscale -= 0.015;
-			
-		}
-	}
-	if (keyboard_check_released(jkey)){
-		vspd = -jpow
-		inair = true
-		if (inair == true) {
-			jpow = 0
-			image_yscale =1;
-		}
-	} 
 }
 
 if (!place_meeting(x, y+1, obj_solid)) {	//if falling without jumpkey
@@ -35,7 +10,7 @@ if (!place_meeting(x, y+1, obj_solid)) {	//if falling without jumpkey
 	vspd += grav;
 	}
 }
-	
+
 // going right
 if (rkey) {
 	hspd = spd;
@@ -50,18 +25,20 @@ if (lkey) {
 	image_speed = 1;
 }
 
-// both keys or neither are being pressed
 if ((!rkey && !lkey) || (rkey && lkey)) {
 	hspd = 0;
 	image_speed = 0;
 }
 
 // collision check horizontal
-if (place_meeting(x+hspd, y, obj_solid)) {
-	while (!place_meeting(x+sign(hspd), y, obj_solid)){
+if (place_meeting(x+hspd, y, obj_solid) || (place_meeting(x+hspd, y, obj_crate))) {
+	repeat (abs(hspd = 1)) {
+		while (!place_meeting(x+sign(hspd), y, obj_solid) || (!place_meeting(x+hspd, y, obj_crate))){
 		x += sign(hspd);
+		}
 	}
 	hspd = 0;
+	image_speed = 0;
 }
 x += hspd;
 
@@ -73,4 +50,3 @@ if (place_meeting(x, y+vspd, obj_solid)) {
 	vspd = 0;
 }
 y += vspd
-
