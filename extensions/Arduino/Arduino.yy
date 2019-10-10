@@ -1,7 +1,7 @@
 {
     "id": "40c6ff28-5d55-4fac-a2aa-7acc1c45c327",
     "modelName": "GMExtension",
-    "mvc": "1.0",
+    "mvc": "1.2",
     "name": "Arduino",
     "IncludedResources": [
         "Included Files\\Arduino.dll"
@@ -20,6 +20,7 @@
     "copyToTargets": -1,
     "date": "2019-16-02 11:10:23",
     "description": "",
+    "exportToGame": true,
     "extensionName": "",
     "files": [
         {
@@ -187,9 +188,12 @@
     "maccompilerflags": "",
     "maclinkerflags": "",
     "macsourcedir": "",
+    "options": null,
+    "optionsFile": "options.json",
     "packageID": "com.buff.arduino",
     "productID": "78168FDB8137426DEB1DCA5EA9FF248B",
     "sourcedir": "",
+    "supportedTargets": -1,
     "tvosProps": false,
     "tvosSystemFrameworkEntries": [
         

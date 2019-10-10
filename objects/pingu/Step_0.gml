@@ -97,6 +97,6 @@ if (place_meeting(x, y, water)) {
 }
 
 if (place_meeting(x, y, fall)) {
-	lives -= 1
+//	lives -= 1
 	room_restart()
 }
