@@ -30,8 +30,6 @@ if (place_meeting(x, y+1, obj_solid)) {
 	} 
 }
 
-//show_debug_message(jstr) //for checking jump power
-
 if (!place_meeting(x, y+1, obj_solid)) {	//if falling without jumpkey
 	if (vspd < 10) {
 	vspd += grav;
