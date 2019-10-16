@@ -5,7 +5,7 @@ if (place_meeting(x, y+1, obj_solid)) {
 	vspd = 0;
 }
 
-if (!place_meeting(x, y+1, obj_solid)) {	//if falling without jumpkey
+if (!place_meeting(x, y+1, obj_solid) || !place_meeting(x, y+1, obj_crate1)) {	//if falling without jumpkey
 	if (vspd < 10) {
 	vspd += grav;
 	}
@@ -31,9 +31,9 @@ if ((!rkey && !lkey) || (rkey && lkey)) {
 }
 
 // collision check horizontal
-if (place_meeting(x+hspd, y, obj_solid) || (place_meeting(x+hspd, y, obj_crate))) {
+if (place_meeting(x+hspd, y, obj_solid) || place_meeting(x+hspd, y, obj_crate)) {
 	repeat (abs(hspd = 1)) {
-		while (!place_meeting(x+sign(hspd), y, obj_solid) || (!place_meeting(x+hspd, y, obj_crate))){
+		while (!place_meeting(x+sign(hspd), y, obj_solid) || !place_meeting(x+hspd, y, obj_crate)){
 		x += sign(hspd);
 		}
 	}
@@ -43,9 +43,11 @@ if (place_meeting(x+hspd, y, obj_solid) || (place_meeting(x+hspd, y, obj_crate))
 x += hspd;
 
 //collision check vertical
-if (place_meeting(x, y+vspd, obj_solid)) {
-	while (!place_meeting(x, y+sign(vspd), obj_solid)){
-		y += sign(vspd);
+if (place_meeting(x, y+vspd, obj_solid) || place_meeting(x, y+vspd,obj_crate1)) {
+	repeat (abs(vspd = 1)) {
+		while (!place_meeting(x, y+sign(vspd), obj_solid) && !place_meeting(x, y+vspd,obj_crate1)){
+			y += sign(vspd);
+		}
 	}
 	vspd = 0;
 }
