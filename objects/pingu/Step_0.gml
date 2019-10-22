@@ -10,25 +10,32 @@ var lkey = keyboard_check(vk_left)
 var jkey = keyboard_check(vk_up)
 var wjkey = keyboard_check(vk_space)
 
+if (global.char != 1) {
+	hspd = 0
+	image_speed = 0
+	vspd = 0
+}
+
 // checking if on ground
 if (place_meeting(x, y+1, obj_solid)) {
 	vspd = 0;
 	image_angle = 0
-		if (jkey) {
+		if (jkey && global.char == 1) {
 		vspd = -jspd
 	}
 } 
 // check for water
 if (place_meeting(x, y, water)) {
 	vspd = 4
-	if (jkey && !wjkey) {
+	if (jkey && !wjkey && global.char == 1) {
 		vspd = -2*vspd 
 	}
-	if (wjkey && !jkey) {
+	if (wjkey && !jkey && global.char == 1) {
 		vspd = -4*vspd
 	}
 }
 
+if (global.char == 1) {
 // gliding
 if (!place_meeting(x, y+1, obj_solid) && jkey) {	//if jump key is being pressed
 		if (vspd < 4) {
@@ -45,14 +52,12 @@ if (!place_meeting(x, y+1, obj_solid) && jkey) {	//if jump key is being pressed
 // going right
 if (rkey) {
 	hspd = spd;
-	image_xscale = 4;
 	image_speed = 1;
 }
 
 // going left
 if (lkey) {
 	hspd = -spd;
-	image_xscale =  -4;
 	image_speed = 1;
 }
 
@@ -64,7 +69,7 @@ if ((!rkey && !lkey) || (rkey && lkey)) {
 		image_speed = 1;
 	}
 }
-
+}
 // collision check horizontal
 if (place_meeting(x+hspd, y, obj_solid)) {
 	while (!place_meeting(x+sign(hspd), y, obj_solid)){
@@ -83,6 +88,7 @@ if (place_meeting(x, y+vspd, obj_solid)) {
 }
 y += vspd
 
+if (global.char == 1) {
 //water orientation
 if (place_meeting(x, y, water)) {
 	if (rkey) {
@@ -95,7 +101,7 @@ if (place_meeting(x, y, water)) {
 		image_angle = 0
 	}
 }
-
+}
 if (place_meeting(x, y, fall)) {
 //	lives -= 1
 	room_restart()

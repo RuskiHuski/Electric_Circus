@@ -11,3 +11,4 @@ vspd = 0;
 //Tony specific
 jpow = 0;
 inair = false;
+

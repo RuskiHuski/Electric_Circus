@@ -11,6 +11,13 @@ if (!place_meeting(x, y+1, obj_solid) || !place_meeting(x, y+1, obj_crate1)) {	/
 	}
 }
 
+if (global.char != 2) {
+	hspd = 0
+	image_speed = 0
+	vspd = 0
+}
+	
+if (global.char == 2) {
 // going right
 if (rkey) {
 	hspd = spd;
@@ -29,6 +36,8 @@ if ((!rkey && !lkey) || (rkey && lkey)) {
 	hspd = 0;
 	image_speed = 0;
 }
+}
+
 
 // collision check horizontal
 if (place_meeting(x+hspd, y, obj_solid) || place_meeting(x+hspd, y, obj_crate)) {

@@ -1,28 +1,28 @@
 {
-    "id": "65609bfa-f588-4a05-8856-689a80570168",
+    "id": "282eb8d2-dbfa-4311-b024-b51ce7bf6236",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "Eli",
+    "name": "object13",
     "eventList": [
         {
-            "id": "07eece01-3424-4ba6-911f-4437c73b4b8f",
+            "id": "56780956-62de-4dae-8701-8f69e579226e",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "65609bfa-f588-4a05-8856-689a80570168"
+            "m_owner": "282eb8d2-dbfa-4311-b024-b51ce7bf6236"
         },
         {
-            "id": "3170750e-0255-429a-9bad-1177efeb3e2f",
+            "id": "39cffbcb-3a60-4218-8457-0dc4bd200ee8",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "65609bfa-f588-4a05-8856-689a80570168"
+            "m_owner": "282eb8d2-dbfa-4311-b024-b51ce7bf6236"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -43,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "0fc6ed32-dc9d-4484-9584-9e23e1170be3",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

@@ -8,10 +8,16 @@ var rkey = keyboard_check(vk_right)
 var lkey = keyboard_check(vk_left)
 var jkey = keyboard_check(vk_up)
 
+if (global.char != 3) {
+	hspd = 0
+	image_speed = 0
+	vspd = 0
+}
+
 // checking if on ground
 if (place_meeting(x, y+1, obj_solid)) {
 	vspd = 0;
-	if (jkey) {
+	if (jkey && global.char == 3) {
 		if (jpow<20){
 			jpow +=1;
 		}
@@ -20,7 +26,7 @@ if (place_meeting(x, y+1, obj_solid)) {
 			
 		}
 	}
-	if (keyboard_check_released(jkey)){
+	if (keyboard_check_released(jkey) && global.char == 3){
 		vspd = -jpow
 		inair = true
 		if (inair == true) {
@@ -35,7 +41,8 @@ if (!place_meeting(x, y+1, obj_solid)) {	//if falling without jumpkey
 	vspd += grav;
 	}
 }
-	
+
+if (global.char == 3) {
 // going right
 if (rkey) {
 	hspd = spd;
@@ -55,7 +62,7 @@ if ((!rkey && !lkey) || (rkey && lkey)) {
 	hspd = 0;
 	image_speed = 0;
 }
-
+}
 // collision check horizontal
 if (place_meeting(x+hspd, y, obj_solid)) {
 	while (!place_meeting(x+sign(hspd), y, obj_solid)){
