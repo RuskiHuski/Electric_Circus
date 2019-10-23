@@ -6,7 +6,7 @@ if (timer == 10) {
 if (keyboard_check(ord("E"))) {
 	global.char += 1;
 	timer = 0
-}
+} 
 
 if (keyboard_check(ord("Q"))) {
 	global.char -= 1;

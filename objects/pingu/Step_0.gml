@@ -53,12 +53,14 @@ if (global.char == 1) {
 if (rkey) {
 	hspd = spd;
 	image_speed = 1;
+	image_xscale = 1
 }
 
 // going left
 if (lkey) {
 	hspd = -spd;
 	image_speed = 1;
+	image_xscale = -1
 }
 
 // both keys or neither are being pressed

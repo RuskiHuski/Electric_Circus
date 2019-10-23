@@ -1,10 +1,10 @@
 var skey = keyboard_check(vk_space)
 
-if (place_meeting(x, y+2, obj_solid) || place_meeting(x, y+1, obj_crate)) {
+if (place_meeting(x, y+2, obj_col)) {
 	vspd = 0;
 }
 
-if (!place_meeting(x, y+2, obj_solid) && !place_meeting(x, y+1, obj_crate)) {
+if (!place_meeting(x, y+2, obj_col)) {
 	if (vspd < 10) {
 	vspd += grav;
 	}
@@ -27,7 +27,7 @@ if (skey) {
 	smash = 0
 }
 
-if (!place_meeting(x-4, y, Eli) && place_meeting(x+hspd, y+grav, obj_solid) || place_meeting(x+hspd, y+grav, obj_crate)) {
+if (!place_meeting(x-4, y, Eli) && place_meeting(x+hspd, y+grav, obj_col)) {
 	hspd = 0;
 } else {
 	if (place_meeting(x-4, y, Eli) && keyboard_check(vk_right)) {

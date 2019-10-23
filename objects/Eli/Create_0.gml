@@ -1,6 +1,6 @@
 grav = 1;
 spd = 4;
-jspd = 20;
+jspd = 2;
 hspd = 0;
 vspd = 0;
 

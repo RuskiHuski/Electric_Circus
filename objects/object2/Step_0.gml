@@ -22,7 +22,6 @@ if (place_meeting(x, y+1, obj_col)) {
 		}
 		if (image_yscale >.7) {
 			image_yscale -= 0.015;
-			
 		}
 	}
 	if (keyboard_check_released(jkey) && global.char == 3){

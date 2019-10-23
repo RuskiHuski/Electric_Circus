@@ -1,5 +1,6 @@
 var rkey = keyboard_check(vk_right)
 var lkey = keyboard_check(vk_left)
+var jkey = keyboard_check(vk_up)
 
 if (place_meeting(x, y+1, obj_col)) {
 	vspd = 0;
@@ -16,7 +17,11 @@ if (global.char != 2) {
 	image_speed = 0
 	vspd = 0
 }
-	
+
+if (jkey && global.char == 2 && place_meeting(x, y+1, obj_col)) {
+		vspd = -2*jspd 
+}
+
 if (global.char == 2) {
 // going right
 if (rkey) {
