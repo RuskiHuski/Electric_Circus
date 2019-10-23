@@ -11,11 +11,10 @@ var jkey = keyboard_check(vk_up)
 if (global.char != 3) {
 	hspd = 0
 	image_speed = 0
-	vspd = 0
 }
 
 // checking if on ground
-if (place_meeting(x, y+1, obj_solid)) {
+if (place_meeting(x, y+1, obj_col)) {
 	vspd = 0;
 	if (jkey && global.char == 3) {
 		if (jpow<20){
@@ -36,7 +35,7 @@ if (place_meeting(x, y+1, obj_solid)) {
 	} 
 }
 
-if (!place_meeting(x, y+1, obj_solid)) {	//if falling without jumpkey
+if (!place_meeting(x, y+1, obj_col)) {	//if falling without jumpkey
 	if (vspd < 10) {
 	vspd += grav;
 	}
@@ -64,8 +63,8 @@ if ((!rkey && !lkey) || (rkey && lkey)) {
 }
 }
 // collision check horizontal
-if (place_meeting(x+hspd, y, obj_solid)) {
-	while (!place_meeting(x+sign(hspd), y, obj_solid)){
+if (place_meeting(x+hspd, y, obj_col)) {
+	while (!place_meeting(x+sign(hspd), y, obj_col)){
 		x += sign(hspd);
 	}
 	hspd = 0;
@@ -73,8 +72,8 @@ if (place_meeting(x+hspd, y, obj_solid)) {
 x += hspd;
 
 //collision check vertical
-if (place_meeting(x, y+vspd, obj_solid)) {
-	while (!place_meeting(x, y+sign(vspd), obj_solid)){
+if (place_meeting(x, y+vspd, obj_col)) {
+	while (!place_meeting(x, y+sign(vspd), obj_col)){
 		y += sign(vspd);
 	}
 	vspd = 0;
