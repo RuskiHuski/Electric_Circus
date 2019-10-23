@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "084016d1-4f11-4700-9e88-37dbdd8c42f9",
+            "Value": {
+                "id": "27461303-c468-4d60-bee3-737450a765cc",
+                "resourcePath": "objects\\lvl_reset\\lvl_reset.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0ba8debe-7017-4113-9d40-918db2a8732c",
             "Value": {
                 "id": "3341a948-9bca-4691-99d5-74ac616029cf",
@@ -114,7 +122,7 @@
             "Key": "282eb8d2-dbfa-4311-b024-b51ce7bf6236",
             "Value": {
                 "id": "be70ce1a-961d-4dec-91ff-b878dac30179",
-                "resourcePath": "objects\\object13\\object13.yy",
+                "resourcePath": "objects\\char_switch\\char_switch.yy",
                 "resourceType": "GMObject"
             }
         },

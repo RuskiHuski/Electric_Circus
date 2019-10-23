@@ -23,5 +23,3 @@ if (global.char > 3) {
 	timer = 0
 }
 }
-
-show_debug_message(global.char)

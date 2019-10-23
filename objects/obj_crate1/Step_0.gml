@@ -25,5 +25,4 @@ if (obj_crate1.y - Eli.y > 12) {
 	} 
 }
 x += hspd
-show_debug_message(obj_crate1.y - Eli.y)
 
