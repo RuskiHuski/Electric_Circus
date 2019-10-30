@@ -4,6 +4,11 @@
 //variables
 grav = 1;
 spd = 7;
-jspd = 12;
+jspd = 20;
 hspd = 0;
 vspd = 0;
+
+//Tony specific
+jpow = 0;
+inair = false;
+
