@@ -1,6 +1,6 @@
-var rkey = keyboard_check(vk_right)
-var lkey = keyboard_check(vk_left)
-var jkey = keyboard_check(vk_up)
+var rkey = global.right
+var lkey = global.left
+var jkey = global.jump
 
 if (place_meeting(x, y+1, obj_col)) {
 	vspd = 0;

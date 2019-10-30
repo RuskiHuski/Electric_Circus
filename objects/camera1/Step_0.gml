@@ -21,5 +21,5 @@ if (global.char = 2) {
 }
 
 if (global.char =3) {
-	follow = object2
+	follow = Tony
 }

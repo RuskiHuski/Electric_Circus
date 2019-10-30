@@ -1,3 +1,6 @@
+global.right = false;
+global.left = false;
+
 grav = 1;
 spd = 4;
 jspd = 2;

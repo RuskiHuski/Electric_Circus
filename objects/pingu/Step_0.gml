@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /// @description Insert description here
 // You can write your code in this editor
 
@@ -6,12 +5,22 @@
 //set variables
 image_speed = 0
 
-=======
->>>>>>> 00d314544c1efea85935ab0e62b5e6c89123501e
+if jumpDelay == 5 {
+	pinguJump = 0;
+	jumpDelay = 0
+	startDelay = 0;
+}
+
+if global.jump == true {
+	pinguJump = 1
+	startDelay = 1
+	jumpDelay = 0
+}
+
 //key binds
 var rkey = global.right
 var lkey = global.left
-var jkey = global.jump
+var jkey = pinguJump
 var wjkey = keyboard_check(vk_space)
 
 if (global.char != 1) {
@@ -24,7 +33,7 @@ if (place_meeting(x, y+1, obj_col)) {
 	image_angle = 0
 		if (jkey && global.char == 1) {
 		vspd = -jspd
-		sprite_index = p_jump
+		//sprite_index = p_jump
 		image_speed = 1
 	}
 } 
@@ -47,7 +56,7 @@ if (!place_meeting(x, y+1, obj_col) && jkey) {	//if jump key is being pressed
 		if (vspd < 4) {
 		vspd += grav;
 		with pingu {
-		sprite_index = p_glide;
+		//sprite_index = p_glide;
 		}
 		image_speed = 1
 	}
@@ -56,7 +65,7 @@ if (!place_meeting(x, y+1, obj_col) && jkey) {	//if jump key is being pressed
 		if (vspd < 10) {
 		vspd += grav;
 				with pingu {
-		sprite_index = p_jump;
+		//sprite_index = p_jump;
 		}
 		}
 	}
@@ -68,7 +77,7 @@ if (rkey) {
 	hspd = spd;
 	if (place_meeting(x, y+grav, obj_col)){
 		with pingu {
-			sprite_index = p_walk;
+			//sprite_index = p_walk;
 		}
 	}
 	image_speed = 1;
@@ -80,7 +89,7 @@ if (lkey) {
 	hspd = -spd;
 	if (place_meeting(x, y+grav, obj_col)){
 		with pingu {
-			sprite_index = p_walk;
+			//sprite_index = p_walk;
 		}
 	}
 	image_speed = 1;
@@ -116,27 +125,27 @@ y += vspd
 
 if (global.char == 1) {
 //water orientation
-if (place_meeting(x, y, water)) {
-	image_index = p_walk
-	if (rkey) {
-		image_angle = -90
-	} else
-	if (lkey) {
-		image_angle = 90
-	} else 
-	if (jkey || wjkey) {
-		image_angle = 0
+	if (place_meeting(x, y, water)) {
+		//image_index = p_walk
+		if (rkey) {
+			image_angle = -90
+		} else
+		if (lkey) {
+			image_angle = 90
+		} else 
+		if (jkey || wjkey) {
+			image_angle = 0
+		}
 	}
 }
-<<<<<<< HEAD
-
-global.jump = 0;
-global.right = 0;
-global.left = 0;
 
 if (place_meeting(x, y, fall)) {
 	lives -= 1
 	room_restart()
-=======
->>>>>>> 00d314544c1efea85935ab0e62b5e6c89123501e
 }
+
+if startDelay == 1 {
+	jumpDelay++
+}
+global.right = 0;
+global.left = 0;
