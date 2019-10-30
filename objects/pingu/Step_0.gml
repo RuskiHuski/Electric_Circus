@@ -1,13 +1,27 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+
+//if string_char_at(data, 1) == "J" {
+//	show_debug_message(data)
+//	var JoyX = real(string_delete(string_delete(data, string_pos(",", data), string_length(data) - string_pos(",", data)), 1, 1));
+//	show_debug_message(JoyX);
+//	if JoyX == 1023 {
+//		left = 1;
+//	}
+//	if JoyX == 0 {
+//		right = 1;
+//	}
+//}
+
 //set variables
 image_speed = 0
 
 //key binds
-var rkey = keyboard_check(vk_right)
-var lkey = keyboard_check(vk_left)
-var jkey = keyboard_check(vk_up)
+var rkey = global.right
+var lkey = global.left
+var jkey = global.jump
 var wjkey = keyboard_check(vk_space)
 
 // checking if on ground
@@ -95,6 +109,10 @@ if (place_meeting(x, y, water)) {
 		image_angle = 0
 	}
 }
+
+global.jump = 0;
+global.right = 0;
+global.left = 0;
 
 if (place_meeting(x, y, fall)) {
 	lives -= 1
