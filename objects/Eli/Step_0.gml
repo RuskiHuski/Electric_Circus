@@ -9,17 +9,17 @@ if (place_meeting(x, y+1, obj_col)) {
 if (!place_meeting(x, y+1, obj_col)) {	//if falling without jumpkey
 	if (vspd < 10) {
 	vspd += grav;
+	image_speed = 0
 	}
 }
 
 if (global.char != 2) {
 	hspd = 0
 	image_speed = 0
-	vspd = 0
 }
 
 if (jkey && global.char == 2 && place_meeting(x, y+1, obj_col)) {
-		vspd = -2*jspd 
+		vspd = -3*jspd 
 }
 
 if (global.char == 2) {
@@ -29,6 +29,7 @@ if (rkey) {
 	image_xscale = 1;
 	image_speed = 1;
 }
+
 
 // going left
 if (lkey) {

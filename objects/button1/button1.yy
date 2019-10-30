@@ -1,33 +1,33 @@
 {
-    "id": "65609bfa-f588-4a05-8856-689a80570168",
+    "id": "756e7c0f-e6f1-405a-90e9-af5a893b1bed",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "Eli",
+    "name": "button1",
     "eventList": [
         {
-            "id": "07eece01-3424-4ba6-911f-4437c73b4b8f",
+            "id": "076d9af3-eb0d-48c7-934a-145686385e12",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "65609bfa-f588-4a05-8856-689a80570168"
+            "m_owner": "756e7c0f-e6f1-405a-90e9-af5a893b1bed"
         },
         {
-            "id": "3170750e-0255-429a-9bad-1177efeb3e2f",
+            "id": "391a1977-5a2a-4d46-8293-7a38d8594625",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "65609bfa-f588-4a05-8856-689a80570168"
+            "m_owner": "756e7c0f-e6f1-405a-90e9-af5a893b1bed"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "0f0312c0-b8f6-46f2-baaf-1d187e91d9e0",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -43,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "f4cb3eb3-798d-438f-818b-dff74394b54c",
+    "spriteId": "5f71800f-60f6-4bdc-9d86-b217579298f4",
     "visible": true
 }
