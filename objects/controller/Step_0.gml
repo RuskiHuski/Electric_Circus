@@ -1,7 +1,13 @@
 //show_debug_message(rawData)
 global.right = 0
-global.left = false
-global.jump = false
+
+if delay == 4 {
+	global.left = false
+	global.jump = false
+	delay = 0
+	startDelay = 0
+}
+
 
 rawData = ""
 rawData = arduino_read_line(global.ard);
@@ -15,11 +21,13 @@ sensorData =  string_copy(data, 4, 7);
 if joyData == "lef" {
 	global.right = false;
 	global.left = true;
+	startDelay = 1;
 }
 
 if joyData == "rig" {
 	global.left = false;
 	global.right = true;
+	startDelay = 1;
 }
 
 if joyData == "upj" {
@@ -57,6 +65,10 @@ if string_char_at(sensorData, 1) == "d" {
 		global.distance = real(string_digits(sensorData))
 	}
 	//show_debug_message(global.distance)
+}
+
+if startDelay == 1 {
+	delay++	
 }
 
 show_debug_message("controller: " + string(global.right))

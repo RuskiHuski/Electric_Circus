@@ -5,7 +5,7 @@
 //set variables
 image_speed = 0
 
-if jumpDelay == 5 {
+if jumpDelay == 4 {
 	pinguJump = 0;
 	jumpDelay = 0
 	startDelay = 0;
